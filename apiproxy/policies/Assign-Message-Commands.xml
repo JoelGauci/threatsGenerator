@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-Commands">
+    <DisplayName>Assign Message Commands</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">{
+            	"commands": {
+            		"xml": "curl --insecure 'https://{organization.name}-{environment.name}.apigee.net/threats/xml?elements=1&amp;attributes=1&amp;depth=5' -v",
+            		"json": "curl  --insecure 'https://{organization.name}-{environment.name}.apigee.net/threats/json?elements=1&amp;attributes=1&amp;depth=5' -v"
+            	},
+            	"test": {
+            		"xml": "curl --insecure  --data-binary @threat.xml -H 'Content-Type: text/xml'  'https://{organization.name}-{environment.name}.apigee.net/threats/test'",
+            		"json": "curl --insecure --data-binary @threat.json -H 'Content-Type: application/json'  'https://{organization.name}-{environment.name}.apigee.net/threats/test'"
+            	}
+            }</Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

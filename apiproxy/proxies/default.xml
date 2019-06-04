@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="xml">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Assign-Message-XML-Threat</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-Threats</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>proxy.pathsuffix MatchesPath "/xml"</Condition>
+        </Flow>
+        <Flow name="json">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Assign-Message-JSON-Threat</Name>
+                </Step>
+                <Step>
+                    <Name>Generate-Threats</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>XML-to-JSON</Name>
+                </Step>
+            </Response>
+            <Condition>proxy.pathsuffix MatchesPath "/json"</Condition>
+        </Flow>
+        <Flow name="test">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>JSON-Threat-Protection-Test</Name>
+                    <Condition>request.header.content-type == "application/json"</Condition>
+                </Step>
+                <Step>
+                    <Name>XML-Threat-Protection-Test</Name>
+                    <Condition>request.header.content-type == "text/xml"</Condition>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/test") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="commands">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>Assign-Message-Commands</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/commands") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/threats</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

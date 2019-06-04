@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Assign-Message-XML-Threat">
+    <DisplayName>Assign Message-XML-Threat</DisplayName>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="content-type">application/xml</Header>
+        </Headers>
+        <Payload contentType="text/xml">
+            <DocXMLGenerator>
+                <NumElements>{request.queryparam.elements}</NumElements>
+                <NumAttributes>{request.queryparam.attributes}</NumAttributes>
+                <ElementDepth>{request.queryparam.depth}</ElementDepth>
+            </DocXMLGenerator>
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="true" transport="http" type="request"/>
+</AssignMessage>

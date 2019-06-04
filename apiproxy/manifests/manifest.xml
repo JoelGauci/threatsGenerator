@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Assign-Message-Commands" version="SHA-512:aaa3f77d81b66ae38f15d5df1cc7c0be3a2fa0900479bfdf45519a24279fde4532b99f16aa85ed6d807e7195fc3953f665cc9c2d49674e30f92b76c71f7efdb4"/>
+        <VersionInfo resourceName="Assign-Message-JSON-Threat" version="SHA-512:de6bcdb26384ebc13d19501ceec822e5443ca2490d90901fe29db5475f709ff16d0840dbe32ab6b3f7cb92cd06c184eb81f232bbd87a10ed2124438e2097c794"/>
+        <VersionInfo resourceName="Assign-Message-XML-Threat" version="SHA-512:632d1244da4858a0ec51152c97d414101c9cb1a30aaa47a5453d39e7ed2c6dc301a7b2242f8f11ba18bed7435b0879c5753ef52e69054e37cfbc037a88bc36cd"/>
+        <VersionInfo resourceName="Generate-Threats" version="SHA-512:ab99da6a02db6446127c1af3be0a51169e2fe9d8971dd9cbaf5f2d57431ff0b88b8b5a3a5e6cac73668b2eb9650ef18fda5aab608df37e7295ab4eb87a769cf8"/>
+        <VersionInfo resourceName="JSON-Threat-Protection-Test" version="SHA-512:6a269049012478e7c6f3d093ce4afc2e4c2c72bb5cba10dfbace0097e4bbd680251bcc7b78cf33c55e9031b4d4e0a2750914a18024be3d1e590cbb79f2883a20"/>
+        <VersionInfo resourceName="XML-Threat-Protection-Test" version="SHA-512:21e413550dedc37f522bd718430c18bdd34dec3a6f6b455b18e0e494a3a99faa46fed43ecafbb07dd25f4c58b5cfe96f7c2e406486d8171bb6cceba776b589c6"/>
+        <VersionInfo resourceName="XML-to-JSON" version="SHA-512:c7bf5757068b0c33f1420d3bafb8cbdbb498cbe25203df545180a726a9de4b4ddc2da9b95bd122dd741ceb6a72ec5047e18c1305070e0037125937e9a26c7f55"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:6c99be7799ac0af8f1143ea482ee75ffbc149c369bf299a065fdc8b9ee070d8df28ba2ddc19998544ce89298e06541fe904ec8a08197ec905127849f46f9ca42"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="xsl://apigee.threats.xsl" version="SHA-512:0a0b0c4ff3809452668a4dac67febac5fd74e929578bd914305e330db09918fcaf6378c817143ba2c4a0c410c51b7d18c5f9949a4bdd62fb9cab8b117cd09b2f"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>
